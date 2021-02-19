@@ -2,7 +2,8 @@
 
 ## Ein einfaches Beispiel für eine TopicMap
 
-<img alt=Screenshot" src="./screenshot.png">
+<img width="1549" alt="Screenshot 2021-02-19 at 08 40 49" src="https://user-images.githubusercontent.com/837211/108474812-2b2a9480-7290-11eb-967a-b174a73e9707.png">
+
 
 ## Datengrundlage
 
