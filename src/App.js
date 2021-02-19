@@ -15,24 +15,18 @@ import TopicMapComponent from "react-cismap/topicmaps/TopicMapComponent";
 import FeatureCollection from "react-cismap/FeatureCollection";
 import GenericInfoBoxFromFeature from "react-cismap/topicmaps/GenericInfoBoxFromFeature";
 import getGTMFeatureStyler from "react-cismap/topicmaps/generic/GTMStyler";
+
+const host = "https://wupp-topicmaps-data.cismet.de";
+
 const getGazData = async (setGazData) => {
   const prefix = "GazDataForStories";
   const sources = {};
 
-  sources.adressen = await md5FetchText(
-    prefix,
-    "https://wunda-geoportal.cismet.de/data/adressen.json"
-  );
-  sources.bezirke = await md5FetchText(
-    prefix,
-    "https://wunda-geoportal.cismet.de/data/bezirke.json"
-  );
-  sources.quartiere = await md5FetchText(
-    prefix,
-    "https://wunda-geoportal.cismet.de/data/quartiere.json"
-  );
-  sources.pois = await md5FetchText(prefix, "https://wunda-geoportal.cismet.de/data/pois.json");
-  sources.kitas = await md5FetchText(prefix, "https://wunda-geoportal.cismet.de/data/kitas.json");
+  sources.adressen = await md5FetchText(prefix, host + "/data/adressen.json");
+  sources.bezirke = await md5FetchText(prefix, host + "/data/bezirke.json");
+  sources.quartiere = await md5FetchText(prefix, host + "data/quartiere.json");
+  sources.pois = await md5FetchText(prefix, host + "/data/pois.json");
+  sources.kitas = await md5FetchText(prefix, host + "/data/kitas.json");
 
   const gazData = getGazDataForTopicIds(sources, [
     "pois",
@@ -53,7 +47,7 @@ function App() {
   return (
     <TopicMapContextProvider
       getFeatureStyler={getGTMFeatureStyler}
-      featureItemsURL='https://wunda-geoportal.cismet.de/data/parkscheinautomatenfeatures.json'
+      featureItemsURL={host + "/data/parkscheinautomatenfeatures.json"}
       clusteringOptions={{
         iconCreateFunction: getClusterIconCreatorFunction(30, (props) => props.color),
       }}
