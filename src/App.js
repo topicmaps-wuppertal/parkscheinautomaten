@@ -52,7 +52,11 @@ function App() {
         iconCreateFunction: getClusterIconCreatorFunction(30, (props) => props.color),
       }}
     >
-      <TopicMapComponent gazData={gazData} infoBox={<GenericInfoBoxFromFeature pixelwidth={300} />}>
+      <TopicMapComponent
+        gazData={gazData}
+        locatorControl={true}
+        infoBox={<GenericInfoBoxFromFeature pixelwidth={300} />}
+      >
         <FeatureCollection />
       </TopicMapComponent>
     </TopicMapContextProvider>
