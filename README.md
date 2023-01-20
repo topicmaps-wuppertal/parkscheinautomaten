@@ -22,3 +22,5 @@ innerhalb des webbasierten städtischen Geoinfomationssystems "WuNDa" zeitnah er
 
 Die als Open Data unter der Lizenz CC BY 4.0 bereitgestellten ESRI - Shapefiles und KML - Dateien
 werden in einem automatisierten Prozess wöchentlich aktualisiert.
+
+.
